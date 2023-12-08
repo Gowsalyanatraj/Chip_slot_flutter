@@ -1,3 +1,4 @@
+import 'package:chips/Chip_field.dart';
 import 'package:flutter/material.dart';
 
 class Chip_Slots extends StatefulWidget {
@@ -15,7 +16,40 @@ class _Chip_SlotsState extends State<Chip_Slots> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Add your skills"),
-        ),
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Chip_field(
+                controller: _controller,
+                onSubmitted: (value) {
+                  if (value.isNotEmpty) {
+                    addSkill(value);
+                    _controller.clear();
+                  }
+                }),
+          ),
+          // Wrap(
+          //   spacing: 8.0,
+          //   children: skill.map(skills){
+          //     return Chip();
+          //   }
+          // )
+        ],
+      ),
     );
+  }
+
+  void addSkill(String Skill) {
+    setState(() {
+      skills.add(skills as String);
+    });
+  }
+
+  void removeSkill(String skill) {
+    setState(() {
+      skills.remove(skill);
+    });
   }
 }
