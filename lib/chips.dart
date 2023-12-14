@@ -30,12 +30,17 @@ class _Chip_SlotsState extends State<Chip_Slots> {
                   }
                 }),
           ),
-          // Wrap(
-          //   spacing: 8.0,
-          //   children: skill.map(skills){
-          //     return Chip();
-          //   }
-          // )
+          Wrap(
+            spacing: 8.0,
+            children: skills.map((skill) {
+              return Chip(
+                label: Text(skill),
+                onDeleted: () {
+                  removeSkill(skill);
+                },
+              );
+            }).toList(),
+          ),
         ],
       ),
     );
