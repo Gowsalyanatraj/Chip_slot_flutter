@@ -10,7 +10,7 @@ class Chip_field extends StatelessWidget {
     return TextFormField(
       controller: controller,
       decoration: InputDecoration(
-          labelText: "Add your skill",
+          labelText: "Pick your Skill",
           suffixIcon: IconButton(
               onPressed: () {
                 onSubmitted(controller.text);
